@@ -1,0 +1,31 @@
+m255
+13
+cModel Technology
+dC:\Modeltech_6.1\examples
+vLCD_CTRL
+Id_>?K5:kEjnefDEiJ=;AU2
+VB4TiS?<0<<PF?YAFGGC;Y3
+dG:\FPGA\2008_lcd_ctrl
+w1269255631
+FG:/FPGA/2008_lcd_ctrl/LCD_CTRL.v
+L0 1
+VB4TiS?<0<<PF?YAFGGC;Y3
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+n@l@c@d_@c@t@r@l
+vtb
+IoeA[4LW[VkCn<MNWT9D?j0
+VZG500[2WVd]C^X518BKcC0
+dG:\FPGA\2008_lcd_ctrl
+w1206948350
+FG:/FPGA/2008_lcd_ctrl/tb.v
+L0 8
+VZG500[2WVd]C^X518BKcC0
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000

@@ -1,0 +1,15 @@
+G:/FPGA/2008_lcd_ctrl/tb.v {1 {vlog -work work G:/FPGA/2008_lcd_ctrl/tb.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}} G:/FPGA/2008_lcd_ctrl/LCD_CTRL.v {1 {vlog -work work G:/FPGA/2008_lcd_ctrl/LCD_CTRL.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module LCD_CTRL
+
+Top level modules:
+	LCD_CTRL
+
+} {} {}}
