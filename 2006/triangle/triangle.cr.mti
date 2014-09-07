@@ -1,0 +1,15 @@
+G:/FPGA/triangle/triangle.v {1 {vlog -work work G:/FPGA/triangle/triangle.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module triangle
+
+Top level modules:
+	triangle
+
+} {} {}} G:/FPGA/triangle/testfixture.v {1 {vlog -work work G:/FPGA/triangle/testfixture.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module test
+
+Top level modules:
+	test
+
+} {} {}}

@@ -1,0 +1,30 @@
+m255
+13
+cModel Technology
+dE:\FPGA\lcd_ctrl
+vtest
+IOX18l6mG^_2@7e249@>Ub3
+V;_[PRo067h]F]G9]P@Cz=2
+dG:\FPGA\triangle
+w1143094130
+FG:/FPGA/triangle/testfixture.v
+L0 9
+V;_[PRo067h]F]G9]P@Cz=2
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+vtriangle
+I?6BMSDaa1Xh7=dChXT@Gh2
+V411RbCdSH6_Un:?WUnWdz1
+dG:\FPGA\triangle
+w1269185813
+FG:/FPGA/triangle/triangle.v
+L0 1
+V411RbCdSH6_Un:?WUnWdz1
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
