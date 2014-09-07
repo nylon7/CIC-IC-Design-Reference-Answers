@@ -1,0 +1,75 @@
+m255
+13
+cModel Technology
+dC:\Modeltech_6.1\examples
+vIRB
+I2lP1_^@RZ2T2iLK2mb0nQ0
+V:VYoblg44Hcz=<HRm`_JO3
+dD:\9813337\IDC
+w1300860137
+FD:/9813337/IDC/testfixture.v
+FIRB.v
+L1 3
+V:VYoblg44Hcz=<HRm`_JO3
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+n@i@r@b
+vIROM
+Ib_ZMHaFG923mLU6@dVB5F0
+Vc<D3eL^9eCcJV9ReQUV:j0
+dD:\9813337\IDC
+w1300860137
+FD:/9813337/IDC/testfixture.v
+FIROM1.v
+L1 14
+Vc<D3eL^9eCcJV9ReQUV:j0
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+n@i@r@o@m
+vLCD_CTRL
+I9fkcO9e=;h4NRkE1eb?032
+VPeWiiU?fV^GHZ>F?gC7cA2
+dD:\9813337\IDC
+w1300860110
+FD:/9813337/IDC/lcd_ctrl.v
+L0 1
+VPeWiiU?fV^GHZ>F?gC7cA2
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+n@l@c@d_@c@t@r@l
+Elcd_ctrl
+w1300686856
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+dD:\9813337\IDC
+FD:/9813337/IDC/lcd_ctrl.vhd
+l0
+L6
+V@DL4XS8hg[01P]cMoIzRz1
+OE;C;6.1;31
+32
+o-work work -2002 -explicit
+tExplicit 1 GenerateLoopIterationMax 100000
+vtest
+I2LeC^:L1nlWmjZLoGDUo30
+VliD7jVNie@E<CRzBh>gYD1
+dD:\9813337\IDC
+w1300860137
+FD:/9813337/IDC/testfixture.v
+L0 20
+VliD7jVNie@E<CRzBh>gYD1
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000

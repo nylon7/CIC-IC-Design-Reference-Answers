@@ -1,0 +1,248 @@
+module LCD_CTRL(clk, reset, IROM_Q, cmd, cmd_valid, IROM_EN, IROM_A, IRB_RW, IRB_D, IRB_A, busy, done);
+input clk;
+input reset;
+input [7:0] IROM_Q;
+input [2:0] cmd;
+input cmd_valid;
+output IROM_EN;
+output [5:0] IROM_A;
+output IRB_RW;
+output [7:0] IRB_D;
+output [5:0] IRB_A;
+output busy;
+output done;
+
+reg IROM_EN;
+reg [5:0] IROM_A;
+reg IRB_RW;
+reg [7:0] IRB_D;
+reg [5:0] IRB_A;
+reg busy;
+reg done;
+
+reg [7:0] IROM_Q_Data[63:0];
+integer i,count,write_count;
+integer sum,average_value,pointer,pointer_x,pointer_y,data_num;
+integer temp0,temp1,temp2,temp3;
+
+always@(posedge clk)
+begin
+   if(reset)
+   begin
+      busy = 1;
+      IROM_EN = 0; 
+   
+      i = 0;
+      count = 0;     
+      IROM_A = count;
+      pointer = 25; //Center
+      done = 0;
+      write_count = 0;
+      pointer_x = 4;
+      pointer_y = 4;
+   end
+   
+   else
+   begin
+     case(i)
+     0 :begin  //Data input
+          if(count > 64)
+          begin
+             i = 1;    
+          end
+          
+          else
+          begin
+             IROM_Q_Data[count-1] = IROM_Q;
+             count = count + 1;
+             IROM_A = count;              
+          end
+        end  
+        
+     1 :begin //Stop data input
+          busy = 0;
+          IROM_EN = 1; 
+          i = 2;
+        end  
+        
+     2 :begin //Command
+          case(cmd)
+          0 :begin
+                if(write_count < 64)
+                begin
+                   busy = 1;
+                   IRB_RW = 0;
+                   IRB_D = IROM_Q_Data[write_count];
+                   IRB_A = write_count;
+                   write_count = write_count + 1;
+                end
+                
+                else
+                begin
+                   i = 4;   
+                end
+             end
+             
+          1 :begin //Shift up
+                
+                busy = 1;
+                if(pointer_y == 1)
+                begin
+                   i = 3;  
+                   data_num = pointer_x + (pointer_y*8);
+                   //$display("1:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end    
+                
+                else
+                begin        
+                   //pointer = pointer - 7;
+                   pointer_y = pointer_y - 1;
+                   i = 3; 
+                   data_num = pointer_x + (pointer_y*8);
+                   //$display("1:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end
+
+                //$display("pointer=%d\n",pointer);
+             end   
+             
+          2 :begin //Shift down
+                
+                busy = 1;
+                if(pointer_y == 7)
+                begin
+                   i = 3; 
+                   data_num = pointer_x + (pointer_y*8);
+                   //$display("2:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end
+                
+                else
+                begin
+                   //pointer = pointer + 7;
+                   pointer_y = pointer_y + 1;
+                   i = 3; 
+                   data_num = pointer_x + (pointer_y*8);
+                   //$display("2:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end
+                
+
+                //$display("pointer=%d\n",pointer);
+             end  
+                          
+          3 :begin //Shift left
+                busy = 1;
+                
+                if(pointer_x == 1)
+                begin
+                  i = 3; 
+                  data_num = pointer_x + (pointer_y*8);
+                  //$display("3:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end  
+                        
+                else
+                begin    
+                  //pointer = pointer - 1;
+                  pointer_x = pointer_x - 1;
+                  i = 3; 
+                  data_num = pointer_x + (pointer_y*8);
+                  //$display("3:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end
+
+                //$display("pointer=%d\n",pointer);        
+             end
+                
+          4 :begin //Shift right
+                busy = 1;
+                
+                if(pointer_x == 7)
+                begin
+                  i = 3;
+                  data_num = pointer_x + (pointer_y*8);
+                  //$display("4:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                   end             
+                
+                else
+                begin
+                  //pointer = pointer + 1;
+                  pointer_x = pointer_x + 1;
+                  i = 3; 
+                  data_num = pointer_x + (pointer_y*8);
+                  //$display("4:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                  
+                end
+
+                //$display("pointer=%d\n",pointer);        
+             end
+                             
+          5 :begin  //Average
+                busy = 1;
+                data_num = pointer_x + (pointer_y*8);
+                sum = IROM_Q_Data[data_num-9] + IROM_Q_Data[data_num-8] + IROM_Q_Data[data_num-1] + IROM_Q_Data[data_num];
+                average_value = sum /4;
+                //$display("IROM_Q_Data[%d]=%d,IROM_Q_Data[%d]=%d,IROM_Q_Data[%d]=%d,IROM_Q_Data[%d]=%d",data_num,IROM_Q_Data[data_num],data_num+1,IROM_Q_Data[data_num+1],data_num+8,IROM_Q_Data[data_num+8],data_num+9,IROM_Q_Data[data_num+9]);
+                
+                IROM_Q_Data[data_num-9] = average_value;
+                IROM_Q_Data[data_num-8] = average_value;
+                IROM_Q_Data[data_num-1] = average_value;
+                IROM_Q_Data[data_num] = average_value;
+                //$display("5:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                   i = 3;
+             end 
+             
+          6 :begin  //Mirror X
+                busy = 1;
+                data_num = pointer_x + (pointer_y*8);
+                temp0 = IROM_Q_Data[data_num-9];
+                temp1 = IROM_Q_Data[data_num-8];
+                temp2 = IROM_Q_Data[data_num-1];
+                temp3 = IROM_Q_Data[data_num];
+                
+                IROM_Q_Data[data_num-9] = temp2;
+                IROM_Q_Data[data_num-8] = temp3;
+                IROM_Q_Data[data_num-1] = temp0;
+                IROM_Q_Data[data_num] = temp1; 
+                //$display("6:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                    //$stop;     
+                i = 3;             
+             end 
+             
+          7 :begin  //Mirror Y
+                busy = 1;
+                data_num = pointer_x + (pointer_y*8);
+                temp0 = IROM_Q_Data[data_num-9];
+                temp1 = IROM_Q_Data[data_num-8];
+                temp2 = IROM_Q_Data[data_num-1];
+                temp3 = IROM_Q_Data[data_num];
+                
+                IROM_Q_Data[data_num-9] = temp1;
+                IROM_Q_Data[data_num-8] = temp0;
+                IROM_Q_Data[data_num-1] = temp3;
+                IROM_Q_Data[data_num] = temp2; 
+                //$display("7:IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h,IROM_Q_Data[%d]=%h",data_num-9,IROM_Q_Data[data_num-9],data_num-8,IROM_Q_Data[data_num-8],data_num-1,IROM_Q_Data[data_num-1],data_num,IROM_Q_Data[data_num]);
+                     //$stop;     
+                i = 3;             
+             end              
+          endcase
+        end   
+        
+     3 :begin //Command finish
+          busy = 0;
+          i = 2;
+        end   
+        
+     4 :begin  //Finish
+          busy = 0;
+          done = 1; 
+        end
+     endcase
+   end
+end
+
+
+endmodule
+

@@ -1,0 +1,12 @@
+隊號(Team number): 50024
+
+--- RTL category---
+使用之HDL語言: Verilog
+使用之合成器:  Quartus II
+RTL檔案名稱(RTL filename): lcd_ctrl.v    
+Post-layout gate-level Netlist:	LCD_CTRL_v.sdo
+Report:	report_001.txt
+
+-----注意事項(annotation)--------------------------------------------------------
+ (其餘注意事項依各參賽隊伍的需求填寫，非為必要部份)
+

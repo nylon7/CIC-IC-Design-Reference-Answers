@@ -1,0 +1,29 @@
+D:/9813337/IDC/lcd_ctrl.v {1 {vlog -work work D:/9813337/IDC/lcd_ctrl.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module LCD_CTRL
+
+Top level modules:
+	LCD_CTRL
+
+} {} {}} D:/9813337/IDC/IROM1.v {1 {vlog -work work D:/9813337/IDC/IROM1.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module IROM
+
+Top level modules:
+	IROM
+
+} {} {}} D:/9813337/IDC/IRB.v {1 {vlog -work work D:/9813337/IDC/IRB.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module IRB
+
+Top level modules:
+	IRB
+
+} {} {}} D:/9813337/IDC/IROM2.v {1 {vlog -work work D:/9813337/IDC/IROM2.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module IROM
+
+Top level modules:
+	IROM
+
+} {} {}}
