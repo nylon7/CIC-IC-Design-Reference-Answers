@@ -1,0 +1,31 @@
+m255
+13
+cModel Technology
+dG:\altera_fpga\FPGA_2005
+vCS
+I3QQYf0c=;Q^1Zd^8D?lXS2
+VP;1JL3cV6P64E9h7iYOML3
+dG:\2005_FPGA
+w1292338446
+FG:/2005_FPGA/CS.v
+L0 1
+VP;1JL3cV6P64E9h7iYOML3
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+n@c@s
+vtest
+IAI;0GiYNUkS_2H]B?_XME0
+ViJhVfP0MH]lH=_ECIzRhn2
+dG:\2005_FPGA
+w1291643717
+FG:/2005_FPGA/testfixture.v
+L0 7
+ViJhVfP0MH]lH=_ECIzRhn2
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000

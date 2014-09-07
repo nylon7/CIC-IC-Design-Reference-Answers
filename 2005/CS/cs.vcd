@@ -1,0 +1,168 @@
+$date
+	Tue Dec 14 22:54:22 2010
+$end
+$version
+	ModelSim Version 6.1
+$end
+$timescale
+	10ps
+$end
+$scope module test $end
+$var parameter 48 ! INPUT_DATA $end
+$var parameter 112 " GOLDEN $end
+$var parameter 32 # N_PAT $end
+$var parameter 32 $ t_reset $end
+$var reg 1 % reset $end
+$var reg 1 & clk $end
+$var reg 1 ' ready $end
+$var reg 1 ( stop $end
+$var reg 1 ) flag1 $end
+$var reg 1 * flag2 $end
+$var wire 1 + pclk $end
+$var integer 32 , i $end
+$var integer 32 - out_f $end
+$var integer 32 . err $end
+$var integer 32 / pattern_num $end
+$var integer 32 0 a $end
+$var integer 32 1 b $end
+$var reg 8 2 X [7:0] $end
+$var reg 10 3 data_tmp [9:0] $end
+$var wire 1 4 Y [9] $end
+$var wire 1 5 Y [8] $end
+$var wire 1 6 Y [7] $end
+$var wire 1 7 Y [6] $end
+$var wire 1 8 Y [5] $end
+$var wire 1 9 Y [4] $end
+$var wire 1 : Y [3] $end
+$var wire 1 ; Y [2] $end
+$var wire 1 < Y [1] $end
+$var wire 1 = Y [0] $end
+$scope module top $end
+$var wire 1 > clk $end
+$var wire 1 ? reset $end
+$var wire 1 @ X [7] $end
+$var wire 1 A X [6] $end
+$var wire 1 B X [5] $end
+$var wire 1 C X [4] $end
+$var wire 1 D X [3] $end
+$var wire 1 E X [2] $end
+$var wire 1 F X [1] $end
+$var wire 1 G X [0] $end
+$var reg 10 H Y [9:0] $end
+$var reg 8 I x_total [7:0] $end
+$var reg 8 J x_avg [7:0] $end
+$var reg 8 K x_appr [7:0] $end
+$var reg 8 L xi_xappr [7:0] $end
+$var integer 32 M i $end
+$var integer 32 N j $end
+$var integer 32 O k $end
+$var integer 32 P fp $end
+$var reg 8 Q reg_a [7:0] $end
+$var reg 8 R reg_b [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11010010110111000101110011001000110000101110100 !
+b110111101110101011101000101111101100111011011110110110001100100011001010110111000101110011001000110000101110100 "
+b11111010000 #
+b10100 $
+0%
+1&
+x'
+0(
+x)
+x*
+bx ,
+b10 -
+b0 .
+b0 /
+b0 0
+b0 1
+b10001111 2
+bx 3
+bx H
+bx I
+bx J
+bx K
+bx L
+bx M
+bx N
+bx O
+bx P
+bx Q
+bx R
+1+
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+1>
+0?
+1G
+1F
+1E
+1D
+0C
+0B
+0A
+1@
+$end
+#500
+0&
+1%
+0+
+0>
+1?
+b0 M
+b0 N
+b0 O
+b0 J
+b0 I
+b0 K
+b0 L
+b0 Q
+b0 R
+b0 P
+#1000
+1&
+1+
+1>
+#1500
+0&
+0+
+0>
+#2000
+1&
+1+
+1>
+#2500
+0%
+0'
+0&
+0?
+0+
+0>
+b10001111 I
+b1 M
+b11110 I
+b10 M
+b10101101 I
+b11 M
+b111100 I
+b100 M
+b11001011 I
+b101 M
+b1011010 I
+b110 M
+b11101001 I
+b111 M
+b1111000 I
+b1000 M

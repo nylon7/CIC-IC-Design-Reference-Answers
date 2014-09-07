@@ -1,0 +1,15 @@
+G:/2005_FPGA/CS.v {1 {vlog -work work G:/2005_FPGA/CS.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module CS
+
+Top level modules:
+	CS
+
+} {} {}} G:/2005_FPGA/testfixture.v {1 {vlog -work work G:/2005_FPGA/testfixture.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module test
+
+Top level modules:
+	test
+
+} {} {}}
