@@ -1,0 +1,639 @@
+# Reading C:/Modeltech_6.1/tcl/vsim/pref.tcl 
+# //  ModelSim SE 6.1 Jun  6 2005 
+# //
+# //  Copyright Mentor Graphics Corporation 2005
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+#  OpenFile "G:/FPGA/lcd_ctrl/lcd_ctrl.mpf" 
+# Loading project lcd_ctrl
+# File does not exist: E:/FPGA/lcd_ctrl/lcd_ctrl.v
+# File does not exist: E:/FPGA/lcd_ctrl/testfixture.v
+# 2 files could not be opened in editor
+# Compile of lcd_ctrl.v was successful.
+# Compile of testfixture.v was successful.
+# 2 compiles, 0 failed with no errors. 
+vsim work.test
+# vsim work.test 
+# Loading work.test
+# Loading work.lcd_ctrl
+# ** Warning: (vsim-3009) [TSCALE] - Module 'lcd_ctrl' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /test/top
+run -all
+# CMD= 1
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# CMD= 2
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  17.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# CMD= 5
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# output_data=  35.
+# 
+# CMD= 3
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# CMD= 4
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# CMD= 0
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# CMD= 1
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# CMD= 3
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# CMD= 5
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  31.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# CMD= 5
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  31.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# CMD= 3
+# 
+# output_data=  18.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  24.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# output_data=  30.
+# 
+# output_data=  31.
+# 
+# output_data=  32.
+# 
+# CMD= 3
+# 
+# output_data=  18.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  24.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# output_data=  30.
+# 
+# output_data=  31.
+# 
+# output_data=  32.
+# 
+# CMD= 4
+# 
+# output_data=  12.
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# output_data=  18.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# output_data=  24.
+# 
+# output_data=  25.
+# 
+# output_data=  26.
+# 
+# CMD= 4
+# 
+# output_data=   6.
+# 
+# output_data=   7.
+# 
+# output_data=   8.
+# 
+# output_data=  12.
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# output_data=  18.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# CMD= 3
+# 
+# output_data=   6.
+# 
+# output_data=   7.
+# 
+# output_data=   8.
+# 
+# output_data=  12.
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# output_data=  18.
+# 
+# output_data=  19.
+# 
+# output_data=  20.
+# 
+# CMD= 4
+# 
+# output_data=   0.
+# 
+# output_data=   1.
+# 
+# output_data=   2.
+# 
+# output_data=   6.
+# 
+# output_data=   7.
+# 
+# output_data=   8.
+# 
+# output_data=  12.
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# CMD= 2
+# 
+# output_data=   1.
+# 
+# output_data=   2.
+# 
+# output_data=   3.
+# 
+# output_data=   7.
+# 
+# output_data=   8.
+# 
+# output_data=   9.
+# 
+# output_data=  13.
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# CMD= 2
+# 
+# output_data=   2.
+# 
+# output_data=   3.
+# 
+# output_data=   4.
+# 
+# output_data=   8.
+# 
+# output_data=   9.
+# 
+# output_data=  10.
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# CMD= 4
+# 
+# output_data=   2.
+# 
+# output_data=   3.
+# 
+# output_data=   4.
+# 
+# output_data=   8.
+# 
+# output_data=   9.
+# 
+# output_data=  10.
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# CMD= 2
+# 
+# output_data=   3.
+# 
+# output_data=   4.
+# 
+# output_data=   5.
+# 
+# output_data=   9.
+# 
+# output_data=  10.
+# 
+# output_data=  11.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  17.
+# 
+# CMD= 2
+# 
+# output_data=   3.
+# 
+# output_data=   4.
+# 
+# output_data=   5.
+# 
+# output_data=   9.
+# 
+# output_data=  10.
+# 
+# output_data=  11.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  17.
+# 
+# CMD= 1
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# CMD= 5
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# CMD= 5
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# CMD= 5
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  32.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# CMD= 2
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# output_data=  35.
+# 
+# CMD= 2
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# output_data=  35.
+# 
+# CMD= 5
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# output_data=  35.
+# 
+# CMD= 5
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  23.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# output_data=  29.
+# 
+# output_data=  33.
+# 
+# output_data=  34.
+# 
+# output_data=  35.
+# 
+# CMD= 1
+# 
+# output_data=  14.
+# 
+# output_data=  15.
+# 
+# output_data=  16.
+# 
+# output_data=  20.
+# 
+# output_data=  21.
+# 
+# output_data=  22.
+# 
+# output_data=  26.
+# 
+# output_data=  27.
+# 
+# output_data=  28.
+# 
+# ---------------------------------------------
+# 
+# All data have been generated successfully!
+# 
+# -------------------PASS-------------------
+# 
+# ---------------------------------------------
+# 
+# ** Note: $finish    : G:/FPGA/lcd_ctrl/testfixture.v(131)
+#    Time: 76400 ns  Iteration: 0  Instance: /test
+# 1
+# Break at G:/FPGA/lcd_ctrl/testfixture.v line 131
+quit -sim

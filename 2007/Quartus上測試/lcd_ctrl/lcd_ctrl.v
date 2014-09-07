@@ -1,0 +1,450 @@
+module lcd_ctrl(clk, reset, datain, cmd, cmd_valid, dataout, output_valid, busy);
+input           clk;
+input           reset;
+input   [7:0]   datain;
+input   [2:0]   cmd;
+input           cmd_valid;
+output  [7:0]   dataout;
+output          output_valid;
+output          busy;
+
+reg  [7:0]   dataout;
+reg          output_valid;
+reg          busy;
+reg  [2:0]   cmd_data; 
+reg  [7:0]   image_buffer[35:0]; 
+reg  [7:0]   output_display_buf[8:0];
+
+integer x_local,y_local,da_local,da_local_cmd;        
+integer da_cout,status;
+integer i;
+        
+always@(posedge clk or reset)
+begin
+  if(reset)
+    begin
+      busy=0;
+      x_local=2;
+      y_local=2;
+      da_local=14;   
+    end   
+    
+  else
+    begin
+       if(cmd_valid==1 && busy==0)
+         begin
+           case(cmd)
+             3'd0:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    i=0;   
+                    status=0;
+                    //$display("CMD= 0\n");
+                  end
+                  
+             3'd1:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    da_cout=0;
+                    status=0;
+                    //$display("CMD= 1\n");
+                  end
+                  
+             3'd2:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    status=0;
+                    //$stop; 
+                    //$display("CMD= 2\n");
+                  end
+                  
+             3'd3:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    status=0; 
+                    //$display("CMD= 3\n");
+                  end 
+                   
+             3'd4:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    status=0;
+                    //$display("CMD= 4\n");
+                  end  
+                  
+             3'd5:begin
+                    cmd_data=cmd;
+                    busy=1;
+                    status=0;
+                    //$stop; 
+                    //$display("CMD= 5\n");
+                  end                                                                 
+           endcase
+         end
+         
+       else if(cmd_valid==0 && busy==1)
+         begin
+           case(cmd_data)
+             3'd0:begin
+                    case(status)
+                    2'd0:begin    
+                           output_valid=1;
+                           dataout= output_display_buf[i]; 
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           if(i==8)
+                             begin
+                               status=1;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end
+                    2'd1:begin
+                           output_valid=0;
+                           busy=0;
+                         end
+                    endcase 
+                  end      
+             3'd1:begin
+                    case(status)
+                    2'd0:begin //Collection data
+                           image_buffer[da_cout]=datain;
+                           //$display("image_data= %d.\n",image_buffer[da_cout]);
+                           da_cout=da_cout+1;
+                           if(da_cout==36)
+                             begin
+                                status=1; 
+                                i=0;   
+                                x_local=2;                               x_local=2;
+                                y_local=2;
+                                da_local=14;
+                                da_local_cmd=da_local;
+                             end    
+                         end   
+                          
+                    2'd1:begin //Copy display data to output display buffer
+                           output_display_buf[i]=image_buffer[da_local_cmd];
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           i=i+1;
+                           if(i==3)
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end
+                             
+                           else if(i==6)     
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end  
+                             
+                           else if(i==9) 
+                             begin
+                               i=0;
+                               status=2;
+                             end   
+
+                           else 
+                             begin
+                               da_local_cmd=da_local_cmd+1;
+                             end                                                                                 
+                         end 
+                         
+                    2'd2:begin //Output display data 
+                           output_valid=1;
+                           dataout= output_display_buf[i]; 
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           if(i==8)
+                             begin
+                               status=3;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end  
+                    2'd3:begin
+                           output_valid=0;
+                           busy=0;
+                         end                                  
+                    endcase    
+                  end
+                  
+             3'd2:begin
+                    case(status)
+                    2'd0:begin
+                           if(x_local==3)
+                             begin
+                               status=1;
+                               i=0;
+                               da_local_cmd=da_local;
+                             end
+                           
+                           else
+                             begin
+                               x_local=x_local+1;
+                               da_local=da_local+1;
+                               i=0;
+                               status=1;
+                               da_local_cmd=da_local;
+                             end  
+                         end
+                          
+                    2'd1:begin //Copy display data to output display buffer
+                           output_display_buf[i]=image_buffer[da_local_cmd];
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           i=i+1;
+                           if(i==3)
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end
+                             
+                           else if(i==6)     
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end  
+                             
+                           else if(i==9) 
+                             begin
+                               i=0;
+                               status=2;
+                             end   
+
+                           else 
+                             begin
+                               da_local_cmd=da_local_cmd+1;
+                             end                                                                                 
+                         end 
+                         
+                    2'd2:begin //Output display data 
+                           output_valid=1;
+                           dataout= output_display_buf[i]; 
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           if(i==8)
+                             begin
+                               status=3;
+                               //$stop;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end
+                    2'd3:begin
+                           output_valid=0;
+                           busy=0;
+                         end          
+                    endcase    
+                  end
+                  
+             3'd3:begin
+                    case(status)
+                    2'd0:begin
+                           if(x_local==0)
+                             begin
+                               status=1;
+                               i=0;
+                               da_local_cmd=da_local;
+                             end
+                           
+                           else
+                             begin
+                               x_local=x_local-1;
+                               da_local=da_local-1;
+                               i=0;
+                               status=1;
+                               da_local_cmd=da_local;
+                             end  
+                         end
+                          
+                    2'd1:begin //Copy display data to output display buffer
+                           output_display_buf[i]=image_buffer[da_local_cmd];
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           i=i+1;
+                           if(i==3)
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end
+                             
+                           else if(i==6)     
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end  
+                             
+                           else if(i==9) 
+                             begin
+                               i=0;
+                               status=2;
+                             end   
+
+                           else 
+                             begin
+                               da_local_cmd=da_local_cmd+1;
+                             end                                                                                 
+                         end 
+                         
+                    2'd2:begin //Output display data 
+                           output_valid=1;
+                           dataout= output_display_buf[i]; 
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           if(i==8)
+                             begin
+                               status=3;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end
+                    2'd3:begin
+                           output_valid=0;
+                           busy=0;
+                         end                           
+                    endcase           
+                  end 
+                   
+             3'd4:begin
+                    case(status)
+                    2'd0:begin
+                           if(y_local==0)
+                             begin
+                               status=1;
+                               i=0;
+                               da_local_cmd=da_local;
+                             end
+                           
+                           else
+                             begin
+                               y_local=y_local-1;
+                               da_local=da_local-6;
+                               i=0;
+                               status=1;
+                               da_local_cmd=da_local;
+                             end  
+                         end
+                          
+                    2'd1:begin //Copy display data to output display buffer
+                           output_display_buf[i]=image_buffer[da_local_cmd];
+                           //$display("output_data= %d.\n",output_display_buf[i]);
+                           i=i+1;
+                           if(i==3)
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end
+                             
+                           else if(i==6)     
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end  
+                             
+                           else if(i==9) 
+                             begin
+                               i=0;
+                               status=2;
+                             end   
+
+                           else 
+                             begin
+                               da_local_cmd=da_local_cmd+1;
+                             end                                                                                 
+                         end 
+                         
+                    2'd2:begin //Output display data 
+                           output_valid=1;
+                           dataout= output_display_buf[i];
+                           //$display("output_data= %d.\n",output_display_buf[i]); 
+                           if(i==8)
+                             begin
+                               status=3;
+                               //$stop;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end
+                    2'd3:begin
+                           output_valid=0;
+                           busy=0;
+                         end         
+                    endcase    
+                      
+                  end  
+                  
+             3'd5:begin
+                    case(status)
+                    2'd0:begin
+                           if(y_local==3)
+                             begin
+                               status=1;
+                               i=0;
+                               da_local_cmd=da_local;
+                             end
+                           
+                           else
+                             begin
+                               y_local=y_local+1;
+                               da_local=da_local+6;
+                               i=0;
+                               status=1;
+                               da_local_cmd=da_local;
+                             end  
+                         end
+                          
+                    2'd1:begin //Copy display data to output display buffer
+                           output_display_buf[i]=image_buffer[da_local_cmd];
+                          // $display("output_data= %d.\n",output_display_buf[i]);
+                           i=i+1;
+                           if(i==3)
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end
+                             
+                           else if(i==6)     
+                             begin
+                               da_local_cmd=da_local_cmd+4;
+                             end  
+                             
+                           else if(i==9) 
+                             begin
+                               i=0;
+                               status=2;
+                             end   
+
+                           else 
+                             begin
+                               da_local_cmd=da_local_cmd+1;
+                             end                                                                                 
+                         end 
+                         
+                    2'd2:begin //Output display data 
+                           output_valid=1;
+                           dataout= output_display_buf[i];
+                           //$display("output_data= %d.\n",output_display_buf[i]); 
+                           if(i==8)
+                             begin
+                               status=3;
+                               //$stop;
+                             end
+                             
+                           else
+                             begin
+                               i=i+1;
+                             end    
+                         end  
+                    2'd3:begin
+                         output_valid=0;
+                         busy=0;
+                         end     
+                    endcase          
+                  end                                                                 
+           endcase         
+         end  
+    end   
+end
+                                                                                                   
+endmodule

@@ -1,0 +1,30 @@
+m255
+13
+cModel Technology
+dC:\Modeltech_6.1\examples
+vlcd_ctrl
+IMHnLD:^?>aSPMJ@RO>6gB2
+VNz0Il26hfie9I=<Y>3R@72
+dE:\FPGA\lcd_ctrl
+w1269148415
+FE:/FPGA/lcd_ctrl/lcd_ctrl.v
+L0 1
+VNz0Il26hfie9I=<Y>3R@72
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000
+vtest
+IA6QQNdeOK6^ITPYAMXW<@2
+VSf>cfVFelC=3oz=MiWIn>2
+dE:\FPGA\lcd_ctrl
+w1175494790
+FE:/FPGA/lcd_ctrl/testfixture.v
+L0 8
+VSf>cfVFelC=3oz=MiWIn>2
+OE;L;6.1;31
+r1
+31
+o-work work
+tGenerateLoopIterationMax 100000

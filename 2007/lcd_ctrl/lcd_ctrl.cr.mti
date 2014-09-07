@@ -1,0 +1,15 @@
+G:/FPGA/lcd_ctrl/testfixture.v {1 {vlog -work work G:/FPGA/lcd_ctrl/testfixture.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module test
+
+Top level modules:
+	test
+
+} {} {}} G:/FPGA/lcd_ctrl/lcd_ctrl.v {1 {vlog -work work G:/FPGA/lcd_ctrl/lcd_ctrl.v
+Model Technology ModelSim SE vlog 6.1 Compiler 2005.06 Jun  6 2005
+-- Compiling module lcd_ctrl
+
+Top level modules:
+	lcd_ctrl
+
+} {} {}}
