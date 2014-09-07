@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="IDCT">
+		<CBX_INST_ENTRY INSTANCE_NAME="|IDCT|lpm_divide:div_rtl_0" CBX_FILE_NAME="lpm_divide_j7i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

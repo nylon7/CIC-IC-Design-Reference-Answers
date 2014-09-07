@@ -1,0 +1,194 @@
+-- Copyright (C) 1991-2006 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--Array_value[6] is Array_value[6] at PIN_W3
+--operation mode is input
+
+Array_value[6] = INPUT();
+
+
+--value_in[9] is value_in[9] at PIN_J17
+--operation mode is input
+
+value_in[9] = INPUT();
+
+
+--Array_value[5] is Array_value[5] at PIN_B14
+--operation mode is input
+
+Array_value[5] = INPUT();
+
+
+--Array_value[4] is Array_value[4] at PIN_G19
+--operation mode is input
+
+Array_value[4] = INPUT();
+
+
+--Array_value[3] is Array_value[3] at PIN_H22
+--operation mode is input
+
+Array_value[3] = INPUT();
+
+
+--Array_value[2] is Array_value[2] at PIN_P4
+--operation mode is input
+
+Array_value[2] = INPUT();
+
+
+--Array_value[1] is Array_value[1] at PIN_AB19
+--operation mode is input
+
+Array_value[1] = INPUT();
+
+
+--Array_value[0] is Array_value[0] at PIN_T4
+--operation mode is input
+
+Array_value[0] = INPUT();
+
+
+--value_in[8] is value_in[8] at PIN_J16
+--operation mode is input
+
+value_in[8] = INPUT();
+
+
+--value_in[7] is value_in[7] at PIN_R15
+--operation mode is input
+
+value_in[7] = INPUT();
+
+
+--value_in[6] is value_in[6] at PIN_V9
+--operation mode is input
+
+value_in[6] = INPUT();
+
+
+--value_in[5] is value_in[5] at PIN_T9
+--operation mode is input
+
+value_in[5] = INPUT();
+
+
+--value_in[4] is value_in[4] at PIN_V7
+--operation mode is input
+
+value_in[4] = INPUT();
+
+
+--value_in[3] is value_in[3] at PIN_A11
+--operation mode is input
+
+value_in[3] = INPUT();
+
+
+--value_in[2] is value_in[2] at PIN_D14
+--operation mode is input
+
+value_in[2] = INPUT();
+
+
+--value_in[1] is value_in[1] at PIN_T10
+--operation mode is input
+
+value_in[1] = INPUT();
+
+
+--value_in[0] is value_in[0] at PIN_F18
+--operation mode is input
+
+value_in[0] = INPUT();
+
+
+--display[0] is display[0] at PIN_J9
+--operation mode is input
+
+display[0] = INPUT();
+
+
+--display[1] is display[1] at PIN_W16
+--operation mode is input
+
+display[1] = INPUT();
+
+
+--value_out[0] is value_out[0] at PIN_U18
+--operation mode is output
+
+value_out[0] = OUTPUT(A1L35);
+
+
+--value_out[1] is value_out[1] at PIN_AA21
+--operation mode is output
+
+value_out[1] = OUTPUT(A1L35);
+
+
+--value_out[2] is value_out[2] at PIN_V21
+--operation mode is output
+
+value_out[2] = OUTPUT(A1L35);
+
+
+--value_out[3] is value_out[3] at PIN_U19
+--operation mode is output
+
+value_out[3] = OUTPUT(A1L35);
+
+
+--value_out[4] is value_out[4] at PIN_T20
+--operation mode is output
+
+value_out[4] = OUTPUT(A1L35);
+
+
+--value_out[5] is value_out[5] at PIN_P19
+--operation mode is output
+
+value_out[5] = OUTPUT(A1L35);
+
+
+--value_out[6] is value_out[6] at PIN_W19
+--operation mode is output
+
+value_out[6] = OUTPUT(A1L35);
+
+
+--value_out[7] is value_out[7] at PIN_W20
+--operation mode is output
+
+value_out[7] = OUTPUT(A1L35);
+
+
+--value_out[8] is value_out[8] at PIN_W21
+--operation mode is output
+
+value_out[8] = OUTPUT(A1L35);
+
+
+--value_out[9] is value_out[9] at PIN_W22
+--operation mode is output
+
+value_out[9] = OUTPUT(A1L35);
+
+
+--A1L35 is ~STRATIX_FITTER_CREATED_GND~I at LC_X1_Y4_N2
+--operation mode is normal
+
+A1L35 = GND;
+
+
+

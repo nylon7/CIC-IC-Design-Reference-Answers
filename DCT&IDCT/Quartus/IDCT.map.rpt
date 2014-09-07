@@ -1,0 +1,454 @@
+Analysis & Synthesis report for IDCT
+Sun Dec 13 23:51:46 2009
+Version 5.1 Build 216 03/06/2006 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Parameter Settings for Inferred Entity Instance: lpm_divide:div_rtl_0
+  9. Analysis & Synthesis Equations
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Dec 13 23:51:46 2009         ;
+; Quartus II Version          ; 5.1 Build 216 03/06/2006 SP 2 SJ Full Version ;
+; Revision Name               ; IDCT                                          ;
+; Top-level Entity Name       ; IDCT                                          ;
+; Family                      ; Stratix                                       ;
+; Total logic elements        ; 0                                             ;
+; Total pins                  ; 29                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; DSP block 9-bit elements    ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
+; Total DLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                              ; IDCT               ; IDCT               ;
+; Family name                                                        ; Stratix            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; -1                 ; -1                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto DSP Block Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; -1                 ; -1                 ;
+; Maximum Number of M4K Memory Blocks                                ; -1                 ; -1                 ;
+; Maximum Number of M-RAM Memory Blocks                              ; -1                 ; -1                 ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                    ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+; IDCT.v                           ; yes             ; User Verilog HDL File        ; C:/17/17/Quartus/IDCT.v                                         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/quartus51/libraries/megafunctions/lpm_divide.tdf      ;
+; abs_divider.inc                  ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/abs_divider.inc     ;
+; sign_div_unsign.inc              ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/sign_div_unsign.inc ;
+; aglobal51.inc                    ; yes             ; Other                        ; c:/altera/quartus51/libraries/megafunctions/aglobal51.inc       ;
+; db/lpm_divide_j7i.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/lpm_divide_j7i.tdf                          ;
+; db/abs_divider_maf.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/abs_divider_maf.tdf                         ;
+; db/alt_u_div_tsd.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/alt_u_div_tsd.tdf                           ;
+; db/add_sub_mf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_mf8.tdf                             ;
+; db/add_sub_nf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_nf8.tdf                             ;
+; db/add_sub_7h8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_7h8.tdf                             ;
+; db/add_sub_8h8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_8h8.tdf                             ;
+; db/add_sub_9h8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_9h8.tdf                             ;
+; db/add_sub_ah8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_ah8.tdf                             ;
+; db/add_sub_bh8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_bh8.tdf                             ;
+; db/add_sub_ch8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_ch8.tdf                             ;
+; db/add_sub_dh8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_dh8.tdf                             ;
+; db/add_sub_eh8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_eh8.tdf                             ;
+; db/add_sub_fh8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_fh8.tdf                             ;
+; db/add_sub_of8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_of8.tdf                             ;
+; db/add_sub_pf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_pf8.tdf                             ;
+; db/add_sub_qf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_qf8.tdf                             ;
+; db/add_sub_rf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_rf8.tdf                             ;
+; db/add_sub_sf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_sf8.tdf                             ;
+; db/add_sub_tf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_tf8.tdf                             ;
+; db/add_sub_uf8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_uf8.tdf                             ;
+; db/add_sub_6h8.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_6h8.tdf                             ;
+; db/lpm_abs_675.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/lpm_abs_675.tdf                             ;
+; db/lpm_abs_575.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/lpm_abs_575.tdf                             ;
+; db/add_sub_49b.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_49b.tdf                             ;
+; db/add_sub_59b.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/17/17/Quartus/db/add_sub_59b.tdf                             ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;         -- Combinational cells for routing  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 29    ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+
+; |IDCT                      ; 0 (0)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 29   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |IDCT               ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:div_rtl_0 ;
++------------------------+----------------+-----------------------------+
+; Parameter Name         ; Value          ; Type                        ;
++------------------------+----------------+-----------------------------+
+; LPM_WIDTHN             ; 26             ; Untyped                     ;
+; LPM_WIDTHD             ; 18             ; Untyped                     ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                     ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                     ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                     ;
+; CBXI_PARAMETER         ; lpm_divide_j7i ; Untyped                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE              ;
++------------------------+----------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in C:/17/17/Quartus/IDCT.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.1 Build 216 03/06/2006 Service Pack 2 SJ Full Version
+    Info: Processing started: Sun Dec 13 23:51:38 2009
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IDCT -c IDCT
+Info: Found 1 design units, including 1 entities, in source file IDCT.v
+    Info: Found entity 1: IDCT
+Warning (10273): Verilog HDL warning at testbench.v(13): sign extended using "x" or "z"
+Info: Found 1 design units, including 1 entities, in source file testbench.v
+    Info: Found entity 1: testbench
+Info: Elaborating entity "IDCT" for the top level hierarchy
+Info (10035): Verilog HDL or VHDL information at IDCT.v(8): object "arrayA" declared but not used
+Warning (10036): Verilog HDL or VHDL warning at IDCT.v(16): object "Array_Angel_Value" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at IDCT.v(17): object "Array_Count_Value" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at IDCT.v(18): object "Array_Expansion" assigned a value but never read
+Info (10035): Verilog HDL or VHDL information at IDCT.v(20): object "b" declared but not used
+Warning (10101): Verilog HDL unsupported feature warning at IDCT.v(24): Initial Construct is not supported and will be ignored
+Warning (10235): Verilog HDL Always Construct warning at IDCT.v(137): variable "value_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at IDCT.v(139): variable "j" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at IDCT.v(161): truncated value with size 26 to match size of target (18)
+Warning (10230): Verilog HDL assignment warning at IDCT.v(198): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at IDCT.v(209): truncated value with size 26 to match size of target (10)
+Warning (10175): Verilog HDL warning at IDCT.v(210): ignoring system Task Enable Statement
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "i" may not be assigned a new value in every possible path through the Always Construct.  Variable "i" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "j" may not be assigned a new value in every possible path through the Always Construct.  Variable "j" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "arrayaddr" may not be assigned a new value in every possible path through the Always Construct.  Variable "arrayaddr" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "arraycount" may not be assigned a new value in every possible path through the Always Construct.  Variable "arraycount" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "arrayM_value" may not be assigned a new value in every possible path through the Always Construct.  Variable "arrayM_value" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "arrayrow" may not be assigned a new value in every possible path through the Always Construct.  Variable "arrayrow" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "tempvalue" may not be assigned a new value in every possible path through the Always Construct.  Variable "tempvalue" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "k" may not be assigned a new value in every possible path through the Always Construct.  Variable "k" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "a" may not be assigned a new value in every possible path through the Always Construct.  Variable "a" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10240): Verilog HDL Always Construct warning at IDCT.v(110): variable "value_out" may not be assigned a new value in every possible path through the Always Construct.  Variable "value_out" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Warning (10030): Tied undriven net "arrayAT[63][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[63][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[62][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[61][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[60][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[59][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[58][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[57][0]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][9]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][8]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][7]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][6]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][5]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][4]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][3]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][2]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][1]" at IDCT.v(9) to 0
+Warning (10030): Tied undriven net "arrayAT[56][0]" at IDCT.v(9) to 0
+Info: Found 1 design units, including 1 entities, in source file ../../../altera/quartus51/libraries/megafunctions/lpm_divide.tdf
+    Info: Found entity 1: lpm_divide
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_j7i.tdf
+    Info: Found entity 1: lpm_divide_j7i
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_maf.tdf
+    Info: Found entity 1: abs_divider_maf
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_tsd.tdf
+    Info: Found entity 1: alt_u_div_tsd
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_mf8.tdf
+    Info: Found entity 1: add_sub_mf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_nf8.tdf
+    Info: Found entity 1: add_sub_nf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7h8.tdf
+    Info: Found entity 1: add_sub_7h8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8h8.tdf
+    Info: Found entity 1: add_sub_8h8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_9h8.tdf
+    Info: Found entity 1: add_sub_9h8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_ah8.tdf
+    Info: Found entity 1: add_sub_ah8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_bh8.tdf
+    Info: Found entity 1: add_sub_bh8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_ch8.tdf
+    Info: Found entity 1: add_sub_ch8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_dh8.tdf
+    Info: Found entity 1: add_sub_dh8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_eh8.tdf
+    Info: Found entity 1: add_sub_eh8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_fh8.tdf
+    Info: Found entity 1: add_sub_fh8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_of8.tdf
+    Info: Found entity 1: add_sub_of8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_pf8.tdf
+    Info: Found entity 1: add_sub_pf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_qf8.tdf
+    Info: Found entity 1: add_sub_qf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_rf8.tdf
+    Info: Found entity 1: add_sub_rf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_sf8.tdf
+    Info: Found entity 1: add_sub_sf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_tf8.tdf
+    Info: Found entity 1: add_sub_tf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_uf8.tdf
+    Info: Found entity 1: add_sub_uf8
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_6h8.tdf
+    Info: Found entity 1: add_sub_6h8
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_675.tdf
+    Info: Found entity 1: lpm_abs_675
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_575.tdf
+    Info: Found entity 1: lpm_abs_575
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_49b.tdf
+    Info: Found entity 1: add_sub_49b
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_59b.tdf
+    Info: Found entity 1: add_sub_59b
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "value_out[0]" stuck at GND
+    Warning: Pin "value_out[1]" stuck at GND
+    Warning: Pin "value_out[2]" stuck at GND
+    Warning: Pin "value_out[3]" stuck at GND
+    Warning: Pin "value_out[4]" stuck at GND
+    Warning: Pin "value_out[5]" stuck at GND
+    Warning: Pin "value_out[6]" stuck at GND
+    Warning: Pin "value_out[7]" stuck at GND
+    Warning: Pin "value_out[8]" stuck at GND
+    Warning: Pin "value_out[9]" stuck at GND
+Warning: Design contains 19 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "Array_value[6]"
+    Warning: No output dependent on input pin "value_in[9]"
+    Warning: No output dependent on input pin "Array_value[5]"
+    Warning: No output dependent on input pin "Array_value[4]"
+    Warning: No output dependent on input pin "Array_value[3]"
+    Warning: No output dependent on input pin "Array_value[2]"
+    Warning: No output dependent on input pin "Array_value[1]"
+    Warning: No output dependent on input pin "Array_value[0]"
+    Warning: No output dependent on input pin "value_in[8]"
+    Warning: No output dependent on input pin "value_in[7]"
+    Warning: No output dependent on input pin "value_in[6]"
+    Warning: No output dependent on input pin "value_in[5]"
+    Warning: No output dependent on input pin "value_in[4]"
+    Warning: No output dependent on input pin "value_in[3]"
+    Warning: No output dependent on input pin "value_in[2]"
+    Warning: No output dependent on input pin "value_in[1]"
+    Warning: No output dependent on input pin "value_in[0]"
+    Warning: No output dependent on input pin "display[0]"
+    Warning: No output dependent on input pin "display[1]"
+Info: Implemented 29 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 10 output pins
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 132 warnings
+    Info: Processing ended: Sun Dec 13 23:51:46 2009
+    Info: Elapsed time: 00:00:09
+
+

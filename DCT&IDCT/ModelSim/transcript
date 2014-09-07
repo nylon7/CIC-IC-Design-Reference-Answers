@@ -1,0 +1,147 @@
+# Reading C:/Modeltech_6.1/tcl/vsim/pref.tcl 
+# //  ModelSim SE 6.1 Jun  6 2005 
+# //
+# //  Copyright Mentor Graphics Corporation 2005
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+#  OpenFile "C:/17/17/ModelSim/IDCT.mpf" 
+# Loading project IDCT
+vsim work.testbench
+# vsim work.testbench 
+# Loading work.testbench
+# Loading work.IDCT
+run -all
+#           0, ArrayY=      -96
+# 
+#           1, ArrayY=      -82
+# 
+#           2, ArrayY=       57
+# 
+#           3, ArrayY=      121
+# 
+#           4, ArrayY=       95
+# 
+#           5, ArrayY=      115
+# 
+#           6, ArrayY=      120
+# 
+#           7, ArrayY=      114
+# 
+#           8, ArrayY=     -126
+# 
+#           9, ArrayY=      -71
+# 
+#          10, ArrayY=       77
+# 
+#          11, ArrayY=      122
+# 
+#          12, ArrayY=      101
+# 
+#          13, ArrayY=      139
+# 
+#          14, ArrayY=      145
+# 
+#          15, ArrayY=      132
+# 
+#          16, ArrayY=     -114
+# 
+#          17, ArrayY=      -95
+# 
+#          18, ArrayY=       63
+# 
+#          19, ArrayY=      122
+# 
+#          20, ArrayY=       48
+# 
+#          21, ArrayY=       14
+# 
+#          22, ArrayY=       -4
+# 
+#          23, ArrayY=      -17
+# 
+#          24, ArrayY=     -106
+# 
+#          25, ArrayY=      -82
+# 
+#          26, ArrayY=       76
+# 
+#          27, ArrayY=       97
+# 
+#          28, ArrayY=        0
+# 
+#          29, ArrayY=       38
+# 
+#          30, ArrayY=      113
+# 
+#          31, ArrayY=      130
+# 
+#          32, ArrayY=     -129
+# 
+#          33, ArrayY=      -69
+# 
+#          34, ArrayY=       94
+# 
+#          35, ArrayY=      105
+# 
+#          36, ArrayY=        0
+# 
+#          37, ArrayY=      -10
+# 
+#          38, ArrayY=       17
+# 
+#          39, ArrayY=       33
+# 
+#          40, ArrayY=     -122
+# 
+#          41, ArrayY=      -75
+# 
+#          42, ArrayY=       62
+# 
+#          43, ArrayY=      125
+# 
+#          44, ArrayY=      103
+# 
+#          45, ArrayY=       58
+# 
+#          46, ArrayY=        0
+# 
+#          47, ArrayY=        0
+# 
+#          48, ArrayY=     -130
+# 
+#          49, ArrayY=      -78
+# 
+#          50, ArrayY=       65
+# 
+#          51, ArrayY=      121
+# 
+#          52, ArrayY=      116
+# 
+#          53, ArrayY=      125
+# 
+#          54, ArrayY=       68
+# 
+#          55, ArrayY=       11
+# 
+#          56, ArrayY=     -107
+# 
+#          57, ArrayY=      -99
+# 
+#          58, ArrayY=       70
+# 
+#          59, ArrayY=      117
+# 
+#          60, ArrayY=       12
+# 
+#          61, ArrayY=        4
+# 
+#          62, ArrayY=       24
+# 
+#          63, ArrayY=        3
+# 
+# Break at C:/17/17/ModelSim/testbench.v line 85
